@@ -4,8 +4,9 @@ import numpy as np
 import sys
 
 try:
-    val = float(sys.argv[1])
-except ValueError as err:
+    val = np.array(sys.argv[1])
+    val = val.astype(np.float64)
+except (ValueError, IndexError):
     print('Not a Number or No Value Entered!')
     exit(0)
 
